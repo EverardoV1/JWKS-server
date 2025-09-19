@@ -1,5 +1,4 @@
 from cryptography.hazmat.primitives.asymmetric import rsa
-from cryptography.hazmat.primitives import serialization
 import base64
 import time
 import uuid
@@ -8,7 +7,7 @@ def time_now():
     return int (time.time())
 
 def base64_url(val):
-    byte_len = (val.bit() + 7) //8
+    byte_len = (val.bit_length() + 7) //8
     data = val.to_bytes(byte_len, "big")
     s = base64.urlsafe_b64encode(data).decode("utf-8")
     
