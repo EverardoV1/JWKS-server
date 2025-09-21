@@ -1,8 +1,7 @@
-from flask import Flask, jsonify, request
 import jwt
+from flask import Flask, jsonify, request
 
-from keys import time_now, create_jwk, ACTIVE_KEY, EXPIRED_KEY
-
+from keys import ACTIVE_KEY, EXPIRED_KEY, create_jwk, time_now
 
 app = Flask(__name__)
 

@@ -1,7 +1,9 @@
 import jwt
+from jwt import ExpiredSignatureError
+
 from app import app
 from keys import ACTIVE_KEY, EXPIRED_KEY, time_now
-from jwt import ExpiredSignatureError
+
 
 #GET /.well-knwon/jks.json should return the active key
 def test_jwks_only_shows_active_key():
